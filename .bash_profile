@@ -13,7 +13,7 @@ export CC=gcc-4.2
 #export GOPATH=$HOME/go
 
 export GOROOT=/usr/local/go
-export GOPATH=$HOME/projects
+export GOPATH=$HOME/go
 export PATH=/usr/local/bin:/usr/local/share/python:$GOPATH/bin:$PATH
 
 # set where virutal environments will live
@@ -33,3 +33,12 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export DOCKER_HOST=tcp://localhost:2375
+
+#source AWS credentials
+source ~/.aws
+
+# Git Bash Prompt
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+        source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi

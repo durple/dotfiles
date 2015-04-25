@@ -37,3 +37,4 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
     \ }
 nmap <F4> :TagbarToggle<CR>
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
