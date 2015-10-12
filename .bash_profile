@@ -14,7 +14,9 @@ export CC=gcc-4.2
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=/usr/local/bin:/usr/local/share/python:$GOPATH/bin:$PATH
+export SCALA_HOME=/opt/scala
+
+export PATH=/usr/local/bin:/usr/local/share/python:$SCALA_HOME/bin:$GOPATH/bin:$GOROOT/bin:$PATH
 
 # set where virutal environments will live
 export WORKON_HOME=$HOME/.virtualenvs
@@ -29,16 +31,25 @@ if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
 else
     echo "WARNING: Can't find virtualenvwrapper.sh"
 fi
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export DOCKER_HOST=tcp://localhost:2375
 
 #source AWS credentials
-source ~/.aws
+#source ~/.aws
+
+# bash completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
 
 # Git Bash Prompt
-
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
         source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+# fixing solarized colours
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
 fi
