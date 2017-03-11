@@ -9,13 +9,13 @@
 	name = Deep Kapadia
 	email = deepkapadia@gmail.com
 [core]
-	excludesfile = /Users/204222/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+#[mergetool "sourcetree"]
+#	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+#	trustExitCode = true
 [rerere]
 	enabled = true
     autoupdate = true
